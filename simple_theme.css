@@ -41,3 +41,17 @@
 .theme-entry a.SourceCode-Forms-Controls-Web-Button{
   height: 40px;
 }
+
+.theme-entry input.SFC.SourceCode-Forms-Controls-Web-TextBox,
+.theme-entry textarea,
+.theme-entry select,
+.theme-entry .input-control.text-input .input-control-m-c,
+.theme-entry .input-control.select-box .input-control-m-c,
+.theme-entry .input-control.dropdown-box .input-control-m-c,
+.theme-entry .input-control.datepicker .input-control-m-c,
+.theme-entry .input-control.calendar-control .input-control-m-c {
+  border-width: var(--textbox-border-width) !important;
+  border-style: solid !important;
+  border-color: var(--input-border-color) !important;
+  border-radius: var(--textbox-rounding) !important;
+}

@@ -42,16 +42,68 @@
   height: 40px;
 }
 
-.theme-entry input.SFC.SourceCode-Forms-Controls-Web-TextBox,
-.theme-entry textarea,
-.theme-entry select,
+/* ================================
+   K2/Nintex Rounded Field Borders
+================================ */
+
+.theme-entry {
+  --custom-field-border-width: 2px;
+  --custom-field-border-color: #000;
+  --custom-field-radius: 10px;
+}
+
+/* Main visible field wrappers */
 .theme-entry .input-control.text-input .input-control-m-c,
+.theme-entry .input-control.text-area .input-control-m-c,
+.theme-entry .input-control.textarea .input-control-m-c,
 .theme-entry .input-control.select-box .input-control-m-c,
 .theme-entry .input-control.dropdown-box .input-control-m-c,
+.theme-entry .input-control.drop-down .input-control-m-c,
 .theme-entry .input-control.datepicker .input-control-m-c,
-.theme-entry .input-control.calendar-control .input-control-m-c {
-  border-width: var(--textbox-border-width) !important;
-  border-style: solid !important;
-  border-color: var(--input-border-color) !important;
-  border-radius: var(--textbox-rounding) !important;
+.theme-entry .input-control.date-picker .input-control-m-c,
+.theme-entry .input-control.calendar-control .input-control-m-c,
+.theme-entry .input-control.picker-input .input-control-m-c,
+.theme-entry .input-control.lookup-box .input-control-m-c,
+.theme-entry .input-control[class*="date"] .input-control-m-c,
+.theme-entry .input-control[class*="calendar"] .input-control-m-c,
+.theme-entry .input-control[class*="dropdown"] .input-control-m-c,
+.theme-entry .input-control[class*="select"] .input-control-m-c,
+.theme-entry .input-control[class*="picker"] .input-control-m-c {
+  border: 2px solid #000 !important;
+  border-bottom: 2px solid #000 !important;
+  border-radius: 10px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  background-color: var(--input-background-color, #fff) !important;
+}
+
+/* Remove conflicting inner borders */
+.theme-entry .input-control input,
+.theme-entry .input-control textarea,
+.theme-entry .input-control select {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  box-sizing: border-box !important;
+}
+
+/* Textarea */
+.theme-entry textarea {
+  padding: 10px 12px !important;
+  min-height: 72px !important;
+  resize: vertical;
+}
+
+/* Text input */
+.theme-entry input.SFC.SourceCode-Forms-Controls-Web-TextBox,
+.theme-entry .input-control.text-input input {
+  height: 54px !important;
+  padding: 0 12px !important;
+}
+
+/* Focus state */
+.theme-entry .input-control:focus-within .input-control-m-c {
+  border: 2px solid #000 !important;
+  border-radius: 10px !important;
 }
